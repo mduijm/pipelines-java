@@ -21,7 +21,7 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 - task: Bash@3
-  displayName:Install_Run_SAST
+  displayName: Install_Run_SAST
    inputs:
    targetType: 'inline'
     script: |
