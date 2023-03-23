@@ -20,11 +20,11 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-  – task: Bash@3
-    displayName:Install_Run_SAST
-    inputs:
-      targetType: 'inline'
-      script: |
-      env | grep -E "AZURE_HTTP_USER_AGENT|BUILD_BUILDID" > /tmp/env
-      docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest
-      docker run --rm --env-file /tmp/env --mount type=bind,source="$PWD",target=/scan  registry.fortidevsec.forticloud.com/fdevsec_sast:latest
+- task: Bash@3
+  displayName:Install_Run_SAST
+  inputs:
+    targetType: 'inline'
+    script: |
+    env | grep -E "AZURE_HTTP_USER_AGENT|BUILD_BUILDID" > /tmp/env
+    docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest
+    docker run --rm --env-file /tmp/env --mount type=bind,source="$PWD",target=/scan  registry.fortidevsec.forticloud.com/fdevsec_sast:latest
