@@ -22,8 +22,8 @@ steps:
     goals: 'package'
 - task: Bash@3
   displayName:Install_Run_SAST
-  inputs:
-    targetType: 'inline'
+   inputs:
+   targetType: 'inline'
     script: |
     env | grep -E "AZURE_HTTP_USER_AGENT|BUILD_BUILDID" > /tmp/env
     docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest
