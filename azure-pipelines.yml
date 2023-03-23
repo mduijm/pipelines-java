@@ -20,13 +20,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-
-trigger:
-  — main
-pool:
-  vmImage: ubuntu-latest
- 
-steps:
+  steps:
   –task: Bash@3
     displayName: Install_Run_SAST
     inputs:
