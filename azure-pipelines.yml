@@ -22,7 +22,6 @@ steps:
     goals: 'package'
   steps:
   –task: Bash@3
-    displayName: Install_Run_SAST
     inputs:
        targetType: 'inline'
        script: |
